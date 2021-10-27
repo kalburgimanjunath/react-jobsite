@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import JobList from '../components/JobList';
-export default function Jobs() {
+export default function Jobs({ jobs }) {
+  // let [jobs, setJobs] = useState(null);
+  // useEffect(() => {
+  //   fetch('https://remotive.io/api/remote-jobs?category=software-dev')
+  //     .then((response) => response.json())
+  //     // 4. Setting *jobs* to the image url that we received from the response above
+  //     .then((data) => setJobs(data.jobs));
+  // }, []);
   return (
     <div>
       <h1>Jobs</h1>
-      <JobList tag="software-dev" title="software dev jobs" />
+      <JobList tag="software-dev" title="software dev jobs" jobs={jobs} />
     </div>
   );
 }

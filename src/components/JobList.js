@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 import { Modal } from 'react-responsive-modal';
-export default function JobList({ tag, title }) {
-  let [jobs, setJobs] = useState(null);
+export default function JobList({ tag, title, jobs }) {
+  // let [jobs, setJobs] = useState(null);
   let [jobId, setJobId] = useState(null);
   const [open, setOpen] = useState(false);
 
@@ -11,12 +11,12 @@ export default function JobList({ tag, title }) {
   };
   const onCloseModal = () => setOpen(false);
 
-  useEffect(() => {
-    fetch('https://remotive.io/api/remote-jobs?category=software-dev')
-      .then((response) => response.json())
-      // 4. Setting *jobs* to the image url that we received from the response above
-      .then((data) => setJobs(data.jobs));
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://remotive.io/api/remote-jobs?category=software-dev')
+  //     .then((response) => response.json())
+  //     // 4. Setting *jobs* to the image url that we received from the response above
+  //     .then((data) => setJobs(data.jobs));
+  // }, []);
   // console.log(jobs);
   // const JobCard = ({ item }) => {
   //   return (

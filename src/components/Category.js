@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
-export default function Category() {
-  let [category, setCategory] = useState(null);
-  useEffect(() => {
-    fetch('https://remotive.io/api/remote-jobs/categories')
-      .then((response) => response.json())
-      // 4. Setting *jobs* to the image url that we received from the response above
-      .then((data) => {
-        setCategory(category);
-      });
-  }, []);
-  console.log(category);
+export default function Category({ category }) {
+  // console.log(category);
+  const CatList = category.map((item) => {
+    // console.log(name);
+
+    return <button>{item.name}</button>;
+  });
   return (
-    <div>
-      {/* {category.map((item) => {
-        item.name;
-      })} */}
+    <div className="container">
+      {category &&
+        category.map((item) => {
+          return (
+            <a href={item.id} className="btn btn-primary">
+              {item.name}
+            </a>
+          );
+          // return <CatList item={item} />;
+        })}
     </div>
   );
 }
