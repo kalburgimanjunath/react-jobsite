@@ -4,6 +4,7 @@ export default function Navbar() {
   const navlist = [
     'Jobs',
     'Salaries',
+    'companies',
     'Messages',
     'Profile',
     'Notification',
@@ -12,7 +13,7 @@ export default function Navbar() {
   const navMenu = navlist.map((item) => {
     return (
       <li className="">
-        <Link to="#">{item}</Link>
+        <Link to={item}>{item}</Link>
       </li>
     );
   });
@@ -34,7 +35,7 @@ export default function Navbar() {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             Logo
           </a>
         </div>

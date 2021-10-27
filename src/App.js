@@ -3,6 +3,7 @@ import './style.css';
 import { Search, Navbar, Category } from './components/index';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Jobs from './pages/Jobs';
+import Company from './pages/Company';
 import { catlist } from './data/category-list';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -28,6 +29,7 @@ export default function App() {
   //   ],
   // };
   let [category, setCategory] = useState(catlist);
+  let [company, setcompany] = useState(null);
   let [jobs, setJobs] = useState(null);
   useEffect(() => {
     fetch('https://remotive.io/api/remote-jobs/categories')
@@ -43,14 +45,20 @@ export default function App() {
   }, []);
   // console.log(category);
   return (
-    <div className="container-fluid">
+    <div className="container">
+      <h2>1</h2>
+
       <Router>
         <Navbar />
-        <Route path="/">
+        <Route path="/jobs">
           <Search />
           <Category category={category.jobs} />
           <Jobs jobs={jobs} />
         </Route>
+        <Route path="/companies">
+          <Company />
+        </Route>
+        <Route path="/*" exact></Route>
       </Router>
     </div>
   );
