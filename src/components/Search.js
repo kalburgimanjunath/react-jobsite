@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 export default function Search({ jobs }) {
   // console.log(jobs);
-  const [player, setPlayer] = useState();
+  const [player, setPlayer] = useState('');
   const [listjobs, setJobList] = useState([]);
   const excludeColumns = ['id'];
   // console.log(listjobs);
   const onChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     let keyword = e.target.value;
     if (keyword !== '' && listjobs !== undefined) {
@@ -24,6 +24,7 @@ export default function Search({ jobs }) {
       setJobList(result);
     } else {
       setJobList(jobs);
+      console.log(jobs);
     }
     setPlayer(keyword);
   };

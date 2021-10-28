@@ -12,7 +12,7 @@ export default function Jobs({ jobs }) {
   return (
     <div>
       <Search jobs={jobs} />
-      <JobList tag="software-dev" title="software dev jobs" jobs={jobs} />
+      {/* <JobList tag="software-dev" title="software dev jobs" jobs={jobs} /> */}
     </div>
   );
 }
