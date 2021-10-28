@@ -47,7 +47,7 @@ export default function JobList({ tag, title, jobs }) {
   //   );
   // };
   return (
-    <div class="">
+    <div className="">
       <h1>{title}</h1>
       {/* <button onClick={() => setOpen(true)}>Open modal</button> */}
       <Modal open={open} onClose={onCloseModal} center>
@@ -57,12 +57,12 @@ export default function JobList({ tag, title, jobs }) {
         jobs.map((item) => (
           <div>
             {/* <Modal open={open} onClose={onCloseModal} center>
-              <div className="container">
+              <div classNameName="container">
                 <JobCard item={item} />
               </div>
             </Modal> */}
             <JobCard item={item} />
-            {/* <p className="card-text">
+            {/* <p classNameName="card-text">
               <a href={item.url} target="_new">
                 View more
               </a>

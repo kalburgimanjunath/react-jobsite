@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import JobList from '../components/JobList';
+import { JobList, Search } from '../components/index';
 export default function Jobs({ jobs }) {
+  // console.log(jobs);
   // let [jobs, setJobs] = useState(null);
   // useEffect(() => {
   //   fetch('https://remotive.io/api/remote-jobs?category=software-dev')
@@ -10,7 +11,7 @@ export default function Jobs({ jobs }) {
   // }, []);
   return (
     <div>
-      <h1>Jobs</h1>
+      <Search jobs={jobs} />
       <JobList tag="software-dev" title="software dev jobs" jobs={jobs} />
     </div>
   );

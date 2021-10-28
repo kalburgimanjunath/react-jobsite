@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 export default function Search({ jobs }) {
+  // console.log(jobs);
   const [player, setPlayer] = useState();
-  const [listjobs, setJobList] = useState({ jobs });
+  const [listjobs, setJobList] = useState([]);
   const excludeColumns = ['id'];
+  // console.log(listjobs);
   const onChange = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
+    console.log(e.target.value);
 
     let keyword = e.target.value;
-    if (keyword !== '') {
-      const result = listjobs.filter((item) => {
-        return item.title.toLowerCase().includes(keyword.toLowerCase());
-      });
-      // const result = Object.keys(listjobs).some((key) =>
-      //   listjobs[key].toLowerCase().includes(keyword.toLowerCase())
-      // );
+    if (keyword !== '' && listjobs !== undefined) {
+      // console.log(keyword);
+      const result =
+        listjobs &&
+        listjobs.filter((item) => {
+          return item.title.toLowerCase().includes(keyword.toLowerCase());
+        });
+      // // const result = Object.keys(listjobs).some((key) =>
+      // //   listjobs[key].toLowerCase().includes(keyword.toLowerCase())
+      // // );
       setJobList(result);
     } else {
       setJobList(jobs);
@@ -59,12 +65,12 @@ export default function Search({ jobs }) {
           {listjobs && listjobs.length > 0 ? (
             listjobs.map((job) => (
               <div key={job.id}>
-                {/* <div key={listjobs.id} className="job">
+                <div key={listjobs.id} className="job">
                   <span className="job-id">{job.id}</span>
                   <span className="job-name">{job.category}</span>
                   <span className="job-age">{job.title}</span>
-                </div> */}
-                <JobCard item={job} />
+                </div>
+                {/* <JobCard item={job} /> */}
               </div>
             ))
           ) : (

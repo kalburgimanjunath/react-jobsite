@@ -51,9 +51,9 @@ export default function App() {
       <Router>
         <Navbar />
         <Route path="/jobs">
-          <Search />
-          <Category category={category.jobs} />
-          <Jobs jobs={jobs} />
+          {/* <Search /> */}
+          {/* <Category category={category.jobs} /> */}
+          <Jobs jobs={jobs} category={category.jobs} />
         </Route>
         <Route path="/companies">
           <Company />
