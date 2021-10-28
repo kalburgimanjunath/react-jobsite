@@ -65,12 +65,12 @@ export default function Search({ jobs }) {
           {listjobs && listjobs.length > 0 ? (
             listjobs.map((job) => (
               <div key={job.id}>
-                <div key={listjobs.id} className="job">
+                {/* <div key={listjobs.id} className="job">
                   <span className="job-id">{job.id}</span>
                   <span className="job-name">{job.category}</span>
                   <span className="job-age">{job.title}</span>
-                </div>
-                {/* <JobCard item={job} /> */}
+                </div> */}
+                <JobCard item={job} />
               </div>
             ))
           ) : (
