@@ -30,7 +30,7 @@ export default function App() {
   // };
   let [category, setCategory] = useState(catlist);
   let [company, setcompany] = useState(null);
-  let [jobs, setJobs] = useState(null);
+  let [jobs, setJobs] = useState([]);
   useEffect(() => {
     // fetch('https://remotive.io/api/remote-jobs/categories')
     //   .then((response) => response.json())

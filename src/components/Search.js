@@ -2,15 +2,26 @@ import React, { useState, useEffect } from 'react';
 import JobCard from './JobCard';
 export default function Search({ jobs }) {
   // console.log(jobs);
-  const [player, setPlayer] = useState(' ');
-  const [listjobs, setJobList] = useState([]);
+  const [player, setPlayer] = useState('');
+  const [listjobs, setJobList] = useState(jobs);
   const excludeColumns = ['id'];
+  let keyword = '';
   // console.log(listjobs);
+  // setJobList(jobs);
+  // useEffect(() => {
+  // setJobList(jobs);
+  // });
+  // useEffect(() => {
+  //   // setPlayer(keyword);
+  //   setJobList(jobs);
+  // });
+
   const onChange = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // console.log(e.target.value);
 
-    let keyword = e.target.value;
+    keyword = e.target.value;
+    setPlayer(e.target.value);
     if (keyword !== '' && listjobs !== undefined) {
       // console.log(keyword);
       const result =
@@ -26,7 +37,7 @@ export default function Search({ jobs }) {
       setJobList(jobs);
       // console.log(jobs);
     }
-    setPlayer(keyword);
+    // setPlayer(keyword);
   };
 
   return (
@@ -63,7 +74,7 @@ export default function Search({ jobs }) {
         </div>
         <div className="user-list">
           <div>Total Jobs:{listjobs.length}</div>
-          {listjobs && listjobs.length > 0 ? (
+          {listjobs && listjobs && listjobs.length > 0 ? (
             listjobs.map((job) => (
               <div key={job.id}>
                 {/* <div key={listjobs.id} className="job">
