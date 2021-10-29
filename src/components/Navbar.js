@@ -12,7 +12,7 @@ export default function Navbar() {
   ];
   const navMenu = navlist.map((item) => {
     return (
-      <li className="">
+      <li key={item} className="">
         <Link to={item}>{item}</Link>
       </li>
     );

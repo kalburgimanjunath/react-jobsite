@@ -32,17 +32,45 @@ export default function App() {
   let [company, setcompany] = useState(null);
   let [jobs, setJobs] = useState(null);
   useEffect(() => {
-    fetch('https://remotive.io/api/remote-jobs/categories')
-      .then((response) => response.json())
-      // 4. Setting *jobs* to the image url that we received from the response above
-      .then((data) => {
-        setCategory(category);
-      });
+    // fetch('https://remotive.io/api/remote-jobs/categories')
+    //   .then((response) => response.json())
+    //   // 4. Setting *jobs* to the image url that we received from the response above
+    //   .then((data) => {
+    //     setCategory(category);
+    //   });
     fetch('https://remotive.io/api/remote-jobs?category=software-dev')
       .then((response) => response.json())
       // 4. Setting *jobs* to the image url that we received from the response above
       .then((data) => setJobs(data.jobs));
   }, []);
+  // const getData = () => {
+  //   const url = [
+  //     fetch('https://remotive.io/api/remote-jobs/categories'),
+  //     fetch('https://remotive.io/api/remote-jobs?category=software-dev'),
+  //   ];
+  //   Promise.all(url)
+  //     .then(function (responses) {
+  //       // Get a JSON object from each of the responses
+  //       return Promise.all(
+  //         responses.map(function (response) {
+  //           return response.json();
+  //         })
+  //       );
+  //     })
+  //     .then(function (data) {
+  //       // Log the data to the console
+  //       // You would do something with both sets of data here
+  //       console.log(data);
+  //     })
+  //     .catch(function (error) {
+  //       // if there's an error, log it
+  //       console.log(error);
+  //     });
+  // };
+  // useEffect(() => {
+  //   console.log('useEffect');
+  //   getData();
+  // });
   // console.log(category);
   return (
     <div className="container">

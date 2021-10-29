@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import JobList from '../components/JobList';
+import AddCompany from './Company/AddCompany';
+import AddUser from './Users/AddUser';
 export default function Company({ jobs }) {
   // let [jobs, setJobs] = useState(null);
   // useEffect(() => {
@@ -11,6 +13,8 @@ export default function Company({ jobs }) {
   return (
     <div>
       <h1>Companies</h1>
+      <AddCompany />
+      <AddUser />
       {/* <JobList tag="software-dev" title="software dev jobs" jobs={jobs} /> */}
     </div>
   );
