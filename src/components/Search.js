@@ -35,7 +35,7 @@ export default function Search({ jobs }) {
       setJobList(result);
     } else {
       setJobList(jobs);
-      // console.log(jobs);
+      console.log(jobs);
     }
     // setPlayer(keyword);
   };

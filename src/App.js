@@ -86,7 +86,7 @@ export default function App() {
         <Route path="/companies">
           <Company />
         </Route>
-        <Route path="/*" exact></Route>
+        {/* <Route path="/*" exact></Route> */}
       </Router>
     </div>
   );
